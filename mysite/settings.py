@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)g-w*l60@uy$c6k#7b#ip-5z+wp_1_o58gqd8mtwkha0hy+jwx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1" , "mydjangobaselmap.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1" , "mybaselmap.herokuapp.com"]
 
 
 # Application definition
