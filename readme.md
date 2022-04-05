@@ -9,13 +9,28 @@ On your computer you will need git and python >= 3.6. You will probably need adm
 
 The tutorial of corey shafer is a must on the topic : "Python Django Tutorial: Full-Featured Web App". This tutorial is inspired from it
 
-
-
 ```plantuml
-![Tutorial Diagram](/svg/JOmn3W8n30Jxl69v01-WG7U8WeOA96ehPqKHZWEsK_1xGaUp6cb6ktYGnMY2-uXkbGJdIiMe9NzMVT4atE8Z30-h-PV-6tuFrinNTgV2gzIYZJMGvx2b5ViZJZZWmY8TZswoOPSMrcqUVG40 "Tutorial Diagram")
+!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.1.0
+skinparam defaultTextAlignment center
+!include ICONURL/common.puml
+!include ICONURL/font-awesome-5/gitlab.puml
+!include ICONURL/font-awesome-5/java.puml
+!include ICONURL/font-awesome-5/rocket.puml
+!include ICONURL/font-awesome/newspaper_o.puml
+FA_NEWSPAPER_O(news,good news!,node) #White {
+FA5_GITLAB(gitlab,GitLab.com,node) #White
+FA5_JAVA(java,PlantUML,node) #White
+FA5_ROCKET(rocket,Integrated,node) #White
+}
+gitlab ..> java
+java ..> rocket
 ```
 
 
+
+
+
+![Tutorial Diagram](/svg/JOmn3W8n30Jxl69v01-WG7U8WeOA96ehPqKHZWEsK_1xGaUp6cb6ktYGnMY2-uXkbGJdIiMe9NzMVT4atE8Z30-h-PV-6tuFrinNTgV2gzIYZJMGvx2b5ViZJZZWmY8TZswoOPSMrcqUVG40 "Tutorial Diagram")
 
 ### 1- We will start by a data preparation example with Geopandas to prepare a Folium map
 
@@ -30,8 +45,7 @@ Create a virtualenv in your folder (MAC) :
   - geopandas is used to parse the shapefile and process the data
   - folium is used to create the map
 - deactivate environment : deactivate
-<br>
-<br>
+
 
 ### 2- Then we will upload our map in a Django application
 
