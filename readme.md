@@ -9,7 +9,14 @@
 
 Along this tutorial we will work mostly with the command line tool from a mac. Windows users will be able to follow though.
 
+
+![Tutorial Diagram](/svg/JOmn3W8n30Jxl69v01-WG7U8WeOA96ehPqKHZWEsK_1xGaUp6cb6ktYGnMY2-uXkbGJdIiMe9NzMVT4atE8Z30-h-PV-6tuFrinNTgV2gzIYZJMGvx2b5ViZJZZWmY8TZswoOPSMrcqUVG40 "Tutorial Diagram")
+
 We will follow the official steps in the official documentations of the tools as much as possible.
+
+![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://github.com/gregwalla/geopyhton/blob/c960e7918f7fa4d457cc1572a4f390aa81d8ba1e/example-uml.iuml)
+
+
 
 On your computer you will need git and python >= 3.6. You will probably need admin rights on your company computer
 
