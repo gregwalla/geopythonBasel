@@ -1,23 +1,8 @@
 
 # Hello There
 
-![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/gregwalla/geopyhton/example-uml.iuml)
-
-
-
-![your-UML-diagram-nam2e](https://github.com/gregwalla/geopyhton/blob/c960e7918f7fa4d457cc1572a4f390aa81d8ba1e/example-uml.iuml)
-
 Along this tutorial we will work mostly with the command line tool from a mac. Windows users will be able to follow though.
-
-
-![Tutorial Diagram](/svg/JOmn3W8n30Jxl69v01-WG7U8WeOA96ehPqKHZWEsK_1xGaUp6cb6ktYGnMY2-uXkbGJdIiMe9NzMVT4atE8Z30-h-PV-6tuFrinNTgV2gzIYZJMGvx2b5ViZJZZWmY8TZswoOPSMrcqUVG40 "Tutorial Diagram")
-
 We will follow the official steps in the official documentations of the tools as much as possible.
-
-![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://github.com/gregwalla/geopyhton/blob/c960e7918f7fa4d457cc1572a4f390aa81d8ba1e/example-uml.iuml)
-
-
-
 On your computer you will need git and python >= 3.6. You will probably need admin rights on your company computer
 
 The tutorial of corey shafer is a must on the topic : "Python Django Tutorial: Full-Featured Web App". This tutorial is inspired from it
@@ -39,13 +24,7 @@ gitlab ..> java
 java ..> rocket
 ```
 
-
-
-
-
-![Tutorial Diagram](/svg/JOmn3W8n30Jxl69v01-WG7U8WeOA96ehPqKHZWEsK_1xGaUp6cb6ktYGnMY2-uXkbGJdIiMe9NzMVT4atE8Z30-h-PV-6tuFrinNTgV2gzIYZJMGvx2b5ViZJZZWmY8TZswoOPSMrcqUVG40 "Tutorial Diagram")
-
-### 1- We will start by a data preparation example with Geopandas to prepare a Folium map
+## 1- We will start by a data preparation example with Geopandas to prepare a Folium map
 
 Create a virtualenv in your folder (MAC) :
 
@@ -59,8 +38,7 @@ Create a virtualenv in your folder (MAC) :
   - folium is used to create the map
 - deactivate environment : deactivate
 
-
-### 2- Then we will upload our map in a Django application
+## 2- Then we will upload our map in a Django application
 
 - cd to folder : cd ../02-Django_map
 - create a virual env named "venv" : python3 -m venv venv
@@ -89,7 +67,7 @@ copy-paste the code in the maps/views file and adapt the application name
   - verify your Django project works : python manage.py runserver
 - check the python manage.py startapp maps
 
-### 3- we will follow some steps in a video to prepare the codebase
+### we will follow some steps in a video to prepare the codebase
 
 - Follow : <https://www.youtube.com/watch?v=6DI_7Zja8Zc>
 
@@ -109,7 +87,7 @@ copy-paste the code in the maps/views file and adapt the application name
 - check that heroku is installed : heroku
 - login : heroku login
 
-## Finally we will push the code to Heroku to have a website ready with a map page
+## 3- Finally we will push the code to Heroku to have a website ready with a map page
 
 - pip freeze > requirements.txt  
 - create the app (specify region) : heroku create -a mybaselmap --region eu
