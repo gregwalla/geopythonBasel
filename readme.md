@@ -4,6 +4,9 @@
 ![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/gregwalla/geopyhton/example-uml.iuml)
 
 
+
+![your-UML-diagram-nam2e](https://github.com/gregwalla/geopyhton/blob/c960e7918f7fa4d457cc1572a4f390aa81d8ba1e/example-uml.iuml)
+
 Along this tutorial we will work mostly with the command line tool from a mac. Windows users will be able to follow though.
 
 We will follow the official steps in the official documentations of the tools as much as possible.
