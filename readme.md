@@ -7,23 +7,6 @@ On your computer you will need git and python >= 3.6. You will probably need adm
 
 The tutorial of corey shafer is a must on the topic : "Python Django Tutorial: Full-Featured Web App". This tutorial is inspired from it
 
-```plantuml
-!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.1.0
-skinparam defaultTextAlignment center
-!include ICONURL/common.puml
-!include ICONURL/font-awesome-5/gitlab.puml
-!include ICONURL/font-awesome-5/java.puml
-!include ICONURL/font-awesome-5/rocket.puml
-!include ICONURL/font-awesome/newspaper_o.puml
-FA_NEWSPAPER_O(news,good news!,node) #White {
-FA5_GITLAB(gitlab,GitLab.com,node) #White
-FA5_JAVA(java,PlantUML,node) #White
-FA5_ROCKET(rocket,Integrated,node) #White
-}
-gitlab ..> java
-java ..> rocket
-```
-
 ## 1- We will start by a data preparation example with Geopandas to prepare a Folium map
 
 Create a virtualenv in your folder (MAC) :
@@ -81,7 +64,7 @@ copy-paste the code in the maps/views file
 - to confirm : in Settings add your app  
 - navigate to : http://127.0.0.1:8000/maps
   
-### we will follow some steps in a video to prepare the codebase
+### Setup git
 
 - Follow : <https://www.youtube.com/watch?v=6DI_7Zja8Zc>
 
@@ -93,15 +76,16 @@ copy-paste the code in the maps/views file
 - check : git status : there should only be a dozen files there
 - Commit for the fist time : git commit -m "Initial Commit"
 
-- install gunicorn : pip install gunicorn Gunicorn is a server
-- create gunicorn file :
+### Setup Heroku
 
+- install gunicorn : pip install gunicorn Gunicorn is a server
+- create procfile
 - sign up to heroku: <https://signup.heroku.com/login>
 - install the Heroku cli : <https://devcenter.heroku.com/articles/heroku-cli>
 - check that heroku is installed : heroku
 - login : heroku login
 
-## 3- Finally we will push the code to Heroku to have a website ready with a map page
+## Push the code to Heroku to have a website ready with a map page
 
 - pip freeze > requirements.txt  
 - create the app (specify region) : heroku create -a mybaselmap --region eu
