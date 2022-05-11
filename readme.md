@@ -89,7 +89,8 @@ copy-paste the code in the maps/views file
 
 - pip freeze > requirements.txt  
 - create the app (specify region) : heroku create -a mybaselmap --region eu
-- add app to allowed hosts in settings.py
+- name must be unique
+- add app to allowed hosts in mysite/mysite/settings.py
 - disable collectstatic : heroku config:set DISABLE_COLLECTSTATIC=1
 - push the code : git push heroku HEAD:master
 - debug: <https://stackoverflow.com/questions/26595874/heroku-src-refspec-master-does-not-match-any>  
