@@ -1,11 +1,28 @@
 
 # Display Your Map on a Website Using Geopandas , Folium , Django , and Heroku
 
-Along this tutorial we will work mostly with the command line tool from a mac. Windows users will be able to follow though.
-We will follow the official steps in the official documentations of the tools as much as possible.
-On your computer you will need git and python >= 3.6. You will probably need admin rights on your company computer
+Along this tutorial we will work mostly with the command line tool from a mac.
+We will emphasize on following the official documentations of the tools.
+Thus : 1-Windows instruction will also usually present in the documentations and
+       2-these documentations are maintained
+On your computer you will need a python >= 3.6 installation at the time of this tutorial.
+You will hopefully not need admin rights (if your are on your company's computer).
 
-The tutorial of corey shafer is a must on the topic : "Python Django Tutorial: Full-Featured Web App". This tutorial is inspired from it
+The tutorial of corey shafer is a must on the topic : "Python Django Tutorial: Full-Featured Web App". This tutorial is inspired from it.
+
+Agenda : 
+1- We will start by a data preparation example with Geopandas to prepare a Folium map
+  Create a virtualenv in your folder (MAC)
+  Create a virtualenv in your folder (Windows)
+2- Serve our map locally in a Django application:
+  Prepare your developpement environment
+  Follow django official tutorial "Writing your first Django app, part 1"
+  Skip "Writing your first Django app, part 2"
+  Adapt "Writing your first Django app, part 3"
+
+
+
+
 
 ## 1- We will start by a data preparation example with Geopandas to prepare a Folium map
 
@@ -29,28 +46,35 @@ Create a virtualenv in your folder (MAC) :
 ### Prepare your developpement environment
 
 - cd to folder : cd ../02-Django_map
-- create a virual env named "venv" : python3 -m venv venv
+- create a virual env named "venv" : python3 -m venv venv (a common name for the target directory is .venv).
 - activate environment : source venv/bin/activate
 - upgrate pip: pip install --upgrade pip
 - install django : pip install django
+reference : https://docs.python.org/3/library/venv.html
 
-### Follow "Writing your first Django app, part 1"
+### Follow django official tutorial "Writing your first Django app, part 1"
 
 - go to the official documentation tutorial01:  <https://docs.djangoproject.com/en/4.0/intro/tutorial01/>
-- the tutorial is about creating a "polls" app. We will just replace the name to a "maps" app
-- so to be more relevant replace "polls" by "maps" everytime you see it
-- copy paste every step to create the app and test a first webpage
+- the tutorial is about creating a "polls" app. 
+- Part 1 is about creating a project and launching a "Hello world" polls app
+- We will just replace the name to "polls" to a "maps" all the way along
+- so replace "polls" by "maps" everytime you see it and follow along
+- copy paste every step of part 1 to create the app and test a first hello world webpage
 
 ### Skip "Writing your first Django app, part 2"
 
-- part 2 about database, models and admin is out of scope for this tuturial
+- part 2 is about database, models and admin. It is out of scope for this tuturial that focuses on deployment.
   
 ### Adapt "Writing your first Django app, part 3"
 
-- in "Write views that actually do something";
+- part 3 introduces the "view" of the model view template:
+- "A view is a “type” of web page in your Django application that generally serves a specific function and has a specific template"
+  
+- in section "Write views that actually do something";
 - go to part "First, create a directory called templates in your polls directory. "
-- Follow this part (Again "polls" is "maps")
-- But instead of an "index.html" replace it with the map html file of part 1 :
+- Follow this part (Again "polls" is to be replaced "maps")
+- But instead of an "index.html" file replace it with the basel_map.html file of part 1 :
+- 
      cd in the folder mysite/maps,
      create a template folder and a map folder in maps (its a naming convention in django) :  mkdir templates/maps
      cd in the root folder cd ../../..,
@@ -87,10 +111,14 @@ copy-paste the code in the maps/views file
 
 ## Push the code to Heroku to have a website ready with a map page
 
-- pip freeze > requirements.txt  
-- create the app (specify region) : heroku create -a mybaselmap --region eu
-- name must be unique
-- add app to allowed hosts in mysite/mysite/settings.py
+- this is where our virtual environment comes in handy , we concentrate on libraries linked to our project
+- cmd: pip freeze > requirements.txt  
+- create the app and specify your region : heroku create -a mybaselmap --region eu
+- Note that the name must be unique
 - disable collectstatic : heroku config:set DISABLE_COLLECTSTATIC=1
+- the topic of static files for is out of scope in this tutorial
+- add the app name to ALLOWED_HOSTS in mysite/mysite/settings.py file: 
+- ALLOWED_HOSTS = ["127.0.0.1" , "mybaselmap.herokuapp.com"]
 - push the code : git push heroku HEAD:master
+- this part is a bit tricky and sometimes requires a bit of debugging
 - debug: <https://stackoverflow.com/questions/26595874/heroku-src-refspec-master-does-not-match-any>  
