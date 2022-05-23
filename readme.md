@@ -1,6 +1,19 @@
 
 # Display Your Map on a Website Using Geopandas , Folium , Django , and Heroku
 
+Speak more about the scope 
+skip details off polls app 
+explain advantages & inconvenients of tools 
+just serve the html
+explain tools 
+tel that docs will be shared 
+start with the output
+explain the benefits (modify easily , search for an integrated web app, best practies , repeat .. )
+code a bit 
+
+
+
+
 Along this tutorial we will work mostly with the command line tool from a mac.
 We will emphasize on following the official documentations of the tools.
 Thus : 1-Windows instruction will also usually present in the documentations and
