@@ -12,14 +12,15 @@ explain the benefits (modify easily , search for an integrated web app, best pra
 code a bit 
 
 
-
-
 Along this tutorial we will work mostly with the command line tool from a mac.
 We will emphasize on following the official documentations of the tools.
+
 Thus : 1-Windows instruction will also usually present in the documentations and
-       2-these documentations are maintained
+       2-these documentations are maintained.
+
 On your computer you will need a python >= 3.6 installation at the time of this tutorial.
-You will hopefully not need admin rights (if your are on your company's computer).
+You need admin (sudo) rights (if your are on your company's computer).
+You will also need git that is used to push the code to Heroku.
 
 The tutorial of corey shafer is a must on the topic : "Python Django Tutorial: Full-Featured Web App". This tutorial is inspired from it.
 
@@ -32,9 +33,6 @@ Agenda :
   Follow django official tutorial "Writing your first Django app, part 1"
   Skip "Writing your first Django app, part 2"
   Adapt "Writing your first Django app, part 3"
-
-
-
 
 
 ## 1- We will start by a data preparation example with Geopandas to prepare a Folium map
@@ -100,6 +98,8 @@ copy-paste the code in the maps/views file
 - verify your Django project works : python manage.py runserver
 - to confirm : in Settings add your app  
 - navigate to : http://127.0.0.1:8000/maps
+
+## 3- Deploy to Heroku
   
 ### Setup git
 
@@ -108,17 +108,17 @@ copy-paste the code in the maps/views file
 - install git if needed : <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
 - ititialize git : git init
 - add a gitignore folder: touch .gitignore
-- copy paste the pyhton gihub gitignore example
+- or copy paste the pyhton gihub gitignore template (mainly to ignore .venv): 
+- https://github.com/github/gitignore/blob/main/Python.gitignore
 - add all files in the folder : git add -A
 - check : git status : there should only be a dozen files there
 - Commit for the fist time : git commit -m "Initial Commit"
 
-### Setup Heroku
+## Setup Heroku
 
-- install gunicorn : pip install gunicorn Gunicorn is a server
-- create procfile
 - sign up to heroku: <https://signup.heroku.com/login>
 - install the Heroku cli : <https://devcenter.heroku.com/articles/heroku-cli>
+- Note : the heroku client requires admin rigths 
 - check that heroku is installed : heroku
 - login : heroku login
 
@@ -128,10 +128,17 @@ copy-paste the code in the maps/views file
 - cmd: pip freeze > requirements.txt  
 - create the app and specify your region : heroku create -a mybaselmap --region eu
 - Note that the name must be unique
-- disable collectstatic : heroku config:set DISABLE_COLLECTSTATIC=1
-- the topic of static files for is out of scope in this tutorial
+- create a procfile to tell heroku how to run the application (Corey's video 21') : web: gunicorn mysite.wsgi
+- install gunicorn : pip install gunicorn. Gunicorn is a WSGI application server
+  (it will invoke the wsgi.py file)
+- Create an heroku config variable : heroku config:set DISABLE_COLLECTSTATIC=1
+- (the topic of static files for is out of scope in this tutorial but you can follow along corey's video to set it up)
 - add the app name to ALLOWED_HOSTS in mysite/mysite/settings.py file: 
-- ALLOWED_HOSTS = ["127.0.0.1" , "mybaselmap.herokuapp.com"]
+- ALLOWED_HOSTS = ["127.0.0.1" , ".herokuapp.com"]
 - push the code : git push heroku HEAD:master
 - this part is a bit tricky and sometimes requires a bit of debugging
 - debug: <https://stackoverflow.com/questions/26595874/heroku-src-refspec-master-does-not-match-any>  
+
+-rename the app:
+heroku apps:rename newname
+-deploying with github :  currently out of order due to a security issue
