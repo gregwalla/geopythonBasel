@@ -34,7 +34,7 @@ Create a virtualenv in your folder (MAC) :
 - check your python3 version : which pyhton3
 - if above 3.7 continue , else it is advised to get a later version of python
 - create virtual environment : python3 -m venv venv
-- activate environment : source bin/activate (if in root folder)
+- activate environment with a 'source' command: source venv/bin/activate 
 - upgrate pip: pip install --upgrade pip
 - install python libraries needed for this step : pip install -r requirements.txt
 - run the notebook or the script :
