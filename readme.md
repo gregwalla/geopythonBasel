@@ -112,30 +112,38 @@ Deployment to Heroku is done though git.
 
 ## Push the code to Heroku 
 
+
+### specifics of Heroku in Django
 - Our virtual environment comes in handy , we concentrate on libraries linked to our project
-- cmd: pip freeze > requirements.txt  
-- create the app and specify your region : heroku create -a mybaselmap --region eu (you can set it up in the portal if no admin rights)
-- Note that the name must be unique
+
 - in the root of mysite folder create a "procfile" to tell heroku how to run the application (to see the details look at Corey's video 21') : save the file with "web: gunicorn mysite.wsgi" inside, and procfile is named without any extension.
 - You will need also to install gunicorn : "pip install gunicorn" . Gunicorn is a WSGI application server (it will invoke the wsgi.py file)
 - Pip freeze and save your environment : pip freeze > requirements.txt
-- Create an heroku config variable : heroku config:set DISABLE_COLLECTSTATIC=1 (you can set it up in the portal if no admin rights) Note : the topic of static files for is out of scope in this tutorial but you can follow along corey's video to set it up. Especially if you want to embed images in the map one day.  
 - add ".herokuapp.com" to ALLOWED_HOSTS in the mysite/mysite/settings.py file: 
 ALLOWED_HOSTS = ["127.0.0.1" , ".herokuapp.com"]
+
+### using the client
+
+- create the app and specify your region : heroku create -a mybaselmap --region eu Note that the name must be unique
+- Create an heroku config variable : heroku config:set DISABLE_COLLECTSTATIC=1 (you can set it up in the portal if no admin rights) Note : the topic of static files for is out of scope in this tutorial but you can follow along corey's video to set it up. Especially if you want to embed images in the map one day.
+  
 - push the code : git push heroku HEAD:master (if your proxy allows it).
 - this part can a bit tricky and sometimes requires a bit of debugging
 - debug: <https://stackoverflow.com/questions/26595874/heroku-src-refspec-master-does-not-match-any>  
 
-- Note : its is easy to rename the app: heroku apps:rename newname
+- Note : its is easy to rename the app: heroku apps:rename newname but your need to follow the doc to update the git remote. see: 
+- https://devcenter.heroku.com/articles/renaming-apps
+You can aso create a new app but you also need to knwo how to manage your remotes
 
--Deploying with github :  
-  - create a repo on github 
-  - add origin to you local repo 
-  - push you code in the repo 
-  - in the Heroku platform set up the automatic deploy : 
-  https://devcenter.heroku.com/articles/github-integration
-  - from now on everytime you push to master heroku will rebuild the website
+### Deploying with github
 
+- create a repo on github 
+- add origin to you local repo , see : https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
+- push you code in the repo 
+- in the Heroku platform set up the automatic deploy : 
+https://devcenter.heroku.com/articles/github-integration
+
+- from now on everytime you push to master heroku will rebuild the website
 
 
 Thats all, thanks & best 
